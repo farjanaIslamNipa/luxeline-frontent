@@ -105,3 +105,6 @@ textarea {
 .container-padding {
   @apply pt-12 md:pt-14 lg:pt-[70px] xl:pt-[100px];
 }
+.nav-item{
+  @apply h-full flex items-center bg-brandLight hover:bg-brandLighter transition-all duration-150 hover:text-brand font-semibold px-2
+}
