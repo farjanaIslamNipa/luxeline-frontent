@@ -66,6 +66,10 @@
   }
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -73,4 +77,31 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+textarea {
+  resize: none;
+}
+
+.custom-container {
+  @apply w-full max-w-[1400px] mx-auto px-5;
+}
+
+@media (max-width: 767px) {
+  .small-device-collapse-nav {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.3s;
+    white-space: nowrap;
+  }
+}
+.section-title {
+  @apply text-3xl md:text-4xl lg:text-[40px] xl:text-5xl font-semibold capitalize text-center;
+}
+.container-padding {
+  @apply pt-12 md:pt-14 lg:pt-[70px] xl:pt-[100px];
 }

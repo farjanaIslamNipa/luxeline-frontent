@@ -6,7 +6,7 @@ export default function Home() {
    <>
     <h1 className="text-brandLighter">homepage</h1>
     <Button variant="outline">Button</Button>
-
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, a!
    </>
   );
 }
