@@ -108,3 +108,16 @@ textarea {
 .nav-item{
   @apply h-full flex items-center bg-brandLight hover:bg-brandLighter transition-all duration-150 hover:text-brand font-semibold px-2
 }
+.header-carousel-card {
+  @apply bg-white p-3 lg:p-6 shadow-[0_3px_6px_rgba(0,0,0,0.16),0_3px_6px_rgba(0,0,0,0.23)] my-2 mx-2
+}
+.promotion-slider .swiper-button-next::after {
+  color: gray;
+  font-size: 30px;
+  margin-right: -6px;
+}
+.promotion-slider .swiper-button-prev::after {
+  color: gray;
+  font-size: 30px;
+  margin-left: -6px;
+}
