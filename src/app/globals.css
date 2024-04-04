@@ -68,6 +68,7 @@
 
 html{
   scroll-behavior: smooth;
+  color: #2D2D2D;
 }
 
 @layer base {
@@ -87,6 +88,10 @@ textarea {
   @apply w-full max-w-[1400px] mx-auto px-5;
 }
 
+.section-title {
+  @apply text-2xl text-brand font-bold
+}
+
 @media (max-width: 767px) {
   .small-device-collapse-nav {
     height: 100%;
@@ -99,9 +104,7 @@ textarea {
     white-space: nowrap;
   }
 }
-.section-title {
-  @apply text-3xl md:text-4xl lg:text-[40px] xl:text-5xl font-semibold capitalize text-center;
-}
+
 .container-padding {
   @apply pt-12 md:pt-14 lg:pt-[70px] xl:pt-[100px];
 }

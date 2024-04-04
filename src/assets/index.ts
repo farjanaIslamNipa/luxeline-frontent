@@ -16,6 +16,8 @@ const assets = {
     trendingNow: require('./home/trending.jpg'),
     exclusive: require('./home/exclusive.jpg'),
     winterFashion: require('./home/daily-deal.jpg'),
+    everydayEssential: require('./home/every-day.jpg'),
+    pants: require('./home/pants.jpg'),
   },
   flash: {
     sale1: require('./home/flash-1.jpg'),

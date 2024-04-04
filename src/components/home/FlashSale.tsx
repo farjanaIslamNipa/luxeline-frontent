@@ -5,9 +5,9 @@ import Image from "next/image";
 
 const FlashSale = () => {
   return (
-    <div className="custom-container mt-14 mb-14">
+    <div className="custom-container mt-20">
       <div className="flex justify-between items-end">
-        <h4 className="font-bold text-xl text-brand">Flash Sale</h4>
+        <h4 className="section-title">Flash Sale</h4>
         <Link href="/flash-sale" className="bg-brand text-brandLighter px-4 py-2 rounded-full text-sm">View All</Link>
       </div>
       <div className="mt-5 grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-3">
