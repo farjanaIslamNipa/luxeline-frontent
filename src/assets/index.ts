@@ -18,6 +18,12 @@ const assets = {
     winterFashion: require('./home/daily-deal.jpg'),
     everydayEssential: require('./home/every-day.jpg'),
     pants: require('./home/pants.jpg'),
+    weekendHeroes: require('./home/weekend-heroes.jpg'),
+    poloTShirt: require('./home/polos.jpg'),
+    shirt: require('./home/shirts-2.jpg'),
+    hoodies: require('./home/hoodies.jpg'),
+    jeans: require('./home/jeans.jpg'),
+    shorts: require('./home/shorts.jpg'),
   },
   flash: {
     sale1: require('./home/flash-1.jpg'),

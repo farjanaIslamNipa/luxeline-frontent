@@ -124,3 +124,38 @@ textarea {
   font-size: 30px;
   margin-left: -6px;
 }
+
+.promotion-slider-title {
+  @apply text-lg lg:text-xl font-semibold mt-1
+}
+
+.category-card{
+  @apply cursor-pointer relative overflow-hidden
+}
+
+.category-card-hover-content {
+  @apply absolute bg-gray-950 h-full w-full top-0 bg-opacity-70 flex justify-center items-center opacity-0 transition-all delay-100 duration-300 ease-in-out
+}
+
+.category-card:hover .category-card-hover-content{
+  @apply opacity-100
+}
+.category-img{
+  -webkit-transition: 0.8s;
+  -moz-transition: 0.8s;
+  -o-transition: 0.8s;
+  -ms-transition: 0.8s;
+  transition: 0.8s;
+}
+.category-card:hover .category-img{
+  -moz-transform: scale(1.2) rotate(0deg);
+  -webkit-transform: scale(1.2) rotate(0deg);
+  -o-transform: scale(1.2) rotate(0deg);
+  -ms-transform: scale(1.2) rotate(0deg);
+  transform: scale(1.2) rotate(0deg);
+  -webkit-transition: 0.8s;
+  -moz-transition: 0.8s;
+  -o-transition: 0.8s;
+  -ms-transition: 0.8s;
+  transition: 0.8s;
+}

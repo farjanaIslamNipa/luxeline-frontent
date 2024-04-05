@@ -38,7 +38,7 @@ const HeroSection = () => {
               <div className="header-carousel-card">
                 <div >
                   <Image src={assets.home.trendingNow} alt="Trending" />
-                  <p className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mt-1">Trending Now</p>
+                  <p className="promotion-slider-title">Trending Now</p>
                 </div>
               </div>
             </SwiperSlide>
@@ -46,7 +46,7 @@ const HeroSection = () => {
               <div className="header-carousel-card">
                 <div >
                     <Image src={assets.home.exclusive} alt="Trending" />
-                    <p className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mt-1">Luxeline Exclusive</p>
+                    <p className="promotion-slider-title">Luxeline Exclusive</p>
                   </div>
                 </div>
             </SwiperSlide>
@@ -54,7 +54,7 @@ const HeroSection = () => {
               <div className="header-carousel-card">
                 <div >
                   <Image src={assets.home.winterFashion} alt="Trending" />
-                  <p className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mt-1">Winter Sale</p>
+                  <p className="promotion-slider-title">Winter Sale</p>
                 </div>
               </div>
             </SwiperSlide>
@@ -62,7 +62,7 @@ const HeroSection = () => {
               <div className="header-carousel-card">
                 <div >
                   <Image src={assets.home.trendingNow} alt="Trending" />
-                  <p className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mt-1">Trending Now</p>
+                  <p className="promotion-slider-title">Trending Now</p>
                 </div>
               </div>
             </SwiperSlide>
@@ -70,7 +70,7 @@ const HeroSection = () => {
               <div className="header-carousel-card">
                 <div >
                     <Image src={assets.home.exclusive} alt="Trending" />
-                    <p className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mt-1">Luxeline Exclusive</p>
+                    <p className="promotion-slider-title">Luxeline Exclusive</p>
                   </div>
                 </div>
             </SwiperSlide>
@@ -78,7 +78,7 @@ const HeroSection = () => {
               <div className="header-carousel-card">
                 <div >
                   <Image src={assets.home.winterFashion} alt="Trending" />
-                  <p className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mt-1">Winter Sale</p>
+                  <p className="promotion-slider-title">Winter Sale</p>
                 </div>
               </div>
             </SwiperSlide>
