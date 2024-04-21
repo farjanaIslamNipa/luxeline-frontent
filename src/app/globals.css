@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -71,6 +73,10 @@ html{
   color: #2D2D2D;
 }
 
+.number-font {
+  font-family: "Open Sans", sans-serif;
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -80,6 +86,9 @@ html{
   }
 }
 
+a{
+  transition: all 0.3s ease-in-out;
+}
 textarea {
   resize: none;
 }
@@ -162,4 +171,23 @@ textarea {
 
 .trending-product-card {
   @apply bg-brandLighter
+}
+.flash-sale-bg{
+  background-image: url('../assets//general/flash-sale.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  height: 100px;
+}
+
+@media(max-width:1023px){
+  .flash-sale-bg{
+    background-position: right 30px center;
+  }
+}
+@media(max-width:650px){
+  .flash-sale-bg{
+    background-image: none;
+    height: auto;
+  }
 }

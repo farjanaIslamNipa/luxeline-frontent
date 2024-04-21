@@ -32,6 +32,7 @@ const assets = {
     sale4: require('./home/flash-4.jpg'),
     sale5: require('./home/flash-5.jpg'),
     sale6: require('./home/flash-6.jpg'),
+    flashSale: require('./general/flash-sale.png'),
   }
 };
 
