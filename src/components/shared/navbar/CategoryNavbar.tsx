@@ -29,7 +29,7 @@ const CategoryNavbar = ({expand, toggleMenu} : TNavbarProps) => {
             <Image src={assets.global.logo} alt="Logo" className="h-9 w-auto" />
           </div>
           <div className="flex flex-col md:flex-row items-start md:items-center gap-5 md:gap-3 lg:gap-6 h-10">
-            <Link href="/Category" className="nav-item">All</Link>
+            <Link href="/mens-clothing" className="nav-item">All</Link>
             <Link href="/Category" className="nav-item">Jeans</Link>
             <Link href="/Category" className="nav-item">Shirts</Link>
             <Link href="/Category" className="nav-item">T-Shirts</Link>
