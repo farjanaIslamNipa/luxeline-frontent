@@ -33,6 +33,13 @@ const assets = {
     sale5: require('./home/flash-5.jpg'),
     sale6: require('./home/flash-6.jpg'),
     flashSale: require('./general/flash-sale.png'),
+  },
+  dashboard: {
+    dashboardIcon: require('./dashboard/dashbaord-white.svg'),
+    recentEvent: require('./dashboard/recent-event-white.svg'),
+    eventIcon: require('./dashboard/event-white.svg'),
+    testimonialIcon: require('./dashboard/testimonial.svg'),
+    userImg: require('./dashboard/user-2.svg'),
   }
 };
 

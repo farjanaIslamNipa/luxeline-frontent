@@ -4,16 +4,23 @@ import TopCategories from "@/components/home/TopCategories";
 import TrendingNow from "@/components/home/TrendingNow";
 
 
-export default function Home() {
+export default async function Home() {
+  const res = await fetch("http://localhost:5000/api/v1/products", {
+    next: {
+      revalidate: 30
+    }
+  })
+  const { data:products }= await res.json()
+
   return (
    <>
     <header>
       <HeroSection />
     </header>
     <main>
-      <FlashSale />
+      <FlashSale products={products} />
       <TopCategories />
-      <TrendingNow />
+      <TrendingNow products={products} />
     </main>
    </>
   );
