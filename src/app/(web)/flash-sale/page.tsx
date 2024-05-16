@@ -1,5 +1,4 @@
 import FlashSaleHeader from "@/components/flash-sale/FlashSaleHeader";
-import FlashSaleSection from "@/components/home/FlashSale";
 
 
 const FlashSale = () => {
@@ -7,7 +6,7 @@ const FlashSale = () => {
     <>
       <FlashSaleHeader />
       <main>
-        <FlashSaleSection />
+        
       </main>
     </>
   );

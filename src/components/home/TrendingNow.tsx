@@ -22,7 +22,7 @@ useEffect(() => {
       </div>
       <div className="mt-5 grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-3">
         {
-          trendingProduct?.slice(0, 4).map((product: TProduct) => <TrendingProductCard key={product._id} product={product} />)
+          trendingProduct?.slice(0, 8).map((product: TProduct) => <TrendingProductCard key={product._id} product={product} />)
         }
       </div>
     </div>
