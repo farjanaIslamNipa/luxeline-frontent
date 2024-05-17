@@ -3,6 +3,8 @@ import {cn} from "@/lib/utils";
 import Image from "next/image";
 import assets from '@/assets/index'
 import Link from "next/link";
+import {useRouter} from "next/navigation";
+
 
 type TNavbarProps = {
   expand: boolean,
@@ -10,6 +12,11 @@ type TNavbarProps = {
 }
 
 const CategoryNavbar = ({expand, toggleMenu} : TNavbarProps) => {
+  const router = useRouter();
+
+  const goTo = (value : string) => {
+    router.push(`/products?category=${value}`);
+  }
 
   return (
     <div className={cn("w-0 md:w-auto small-device-collapse-nav bg-opacity-50 md:bg-opacity-100 bg-brandLight text-brandLighter text-xs", { "w-full": expand })}>
@@ -29,8 +36,9 @@ const CategoryNavbar = ({expand, toggleMenu} : TNavbarProps) => {
             <Image src={assets.global.logo} alt="Logo" className="h-9 w-auto" />
           </div>
           <div className="flex flex-col md:flex-row items-start md:items-center gap-5 md:gap-3 lg:gap-6 h-10">
+         <button onClick={() => goTo('Hoodies')}>cat</button>
             <Link href="/mens-clothing" className="nav-item">All</Link>
-            <Link href="/Category" className="nav-item">Jeans</Link>
+            <Link href="/products" className="nav-item">Jeans</Link>
             <Link href="/Category" className="nav-item">Shirts</Link>
             <Link href="/Category" className="nav-item">T-Shirts</Link>
             <Link href="/Category" className="nav-item">Hoodies</Link>
