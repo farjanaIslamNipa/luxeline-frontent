@@ -93,6 +93,10 @@ textarea {
   resize: none;
 }
 
+.active-category{
+  background-color: aqua;
+}
+
 .custom-container {
   @apply w-full max-w-[1400px] mx-auto px-5;
 }
@@ -118,7 +122,7 @@ textarea {
   @apply pt-12 md:pt-14 lg:pt-[70px] xl:pt-[100px];
 }
 .nav-item{
-  @apply h-full flex items-center bg-brandLight hover:bg-brandLighter transition-all duration-150 hover:text-brand font-semibold px-2
+  @apply h-full flex items-center hover:bg-brandLighter transition-all duration-150 hover:text-brand font-semibold px-2 capitalize
 }
 .header-carousel-card {
   @apply bg-white p-3 lg:p-6 shadow-[0_3px_6px_rgba(0,0,0,0.16),0_3px_6px_rgba(0,0,0,0.23)] my-2 mx-2

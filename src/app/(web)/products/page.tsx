@@ -12,9 +12,18 @@ const ProductPage = async({searchParams} : {searchParams: Record<string, unknown
   const { data:products }= await res.json()
 
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <div>
       {
-        products.map((product : TProduct) => <TrendingProductCard product={product} key={product._id} />)
+        products.length > 0 ?
+        <div className="grid grid-cols-3 gap-4">
+          {
+            products.map((product : TProduct) => <TrendingProductCard product={product} key={product._id} />)
+          }
+        </div>
+        :
+        <div className="h-[40vh] flex justify-center items-center">
+          <p className="text-center py-5 font-bold text-3xl text-red-700">No item found !</p>
+        </div>
       }
     </div>
   );

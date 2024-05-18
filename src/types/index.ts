@@ -4,6 +4,7 @@ export type TProduct = {
   images: string[];
   oldPrice: number;
   currentPrice: number;
+  description: string;
   isFlashSale: boolean;
   isTrending: boolean;
   rating: number;

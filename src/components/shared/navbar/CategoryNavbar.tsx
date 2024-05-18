@@ -2,8 +2,7 @@
 import {cn} from "@/lib/utils";
 import Image from "next/image";
 import assets from '@/assets/index'
-import Link from "next/link";
-import {useRouter} from "next/navigation";
+import useCategoryNavigation from "@/hooks/useCategoryNavigation";
 
 
 type TNavbarProps = {
@@ -12,12 +11,9 @@ type TNavbarProps = {
 }
 
 const CategoryNavbar = ({expand, toggleMenu} : TNavbarProps) => {
-  const router = useRouter();
-
-  const goTo = (value : string) => {
-    router.push(`/products?category=${value}`);
-  }
-
+  const {goToCategory} = useCategoryNavigation()
+  
+  
   return (
     <div className={cn("w-0 md:w-auto small-device-collapse-nav bg-opacity-50 md:bg-opacity-100 bg-brandLight text-brandLighter text-xs", { "w-full": expand })}>
       <div className="w-full max-w-[1400px] mx-auto">
@@ -36,17 +32,15 @@ const CategoryNavbar = ({expand, toggleMenu} : TNavbarProps) => {
             <Image src={assets.global.logo} alt="Logo" className="h-9 w-auto" />
           </div>
           <div className="flex flex-col md:flex-row items-start md:items-center gap-5 md:gap-3 lg:gap-6 h-10">
-         <button onClick={() => goTo('Hoodies')}>cat</button>
-            <Link href="/mens-clothing" className="nav-item">All</Link>
-            <Link href="/products" className="nav-item">Jeans</Link>
-            <Link href="/Category" className="nav-item">Shirts</Link>
-            <Link href="/Category" className="nav-item">T-Shirts</Link>
-            <Link href="/Category" className="nav-item">Hoodies</Link>
-            <Link href="/Category" className="nav-item">Shorts</Link>
-            <Link href="/Category" className="nav-item">Polos</Link>
-            <Link href="/Category" className="nav-item">Jackets</Link>
-            <Link href="/Category" className="nav-item">Sweatshirts</Link>
-            <Link href="/Category" className="nav-item">Pants</Link>
+            <button onClick={() => goToCategory('shirts')} className="nav-item">Shirts</button>
+            <button onClick={() => goToCategory('pants')} className="nav-item">Pants</button>
+            <button onClick={() => goToCategory('t-shirts')} className="nav-item">T-Shirts</button>
+            <button onClick={() => goToCategory('hoodies')} className="nav-item">Hoodies</button>
+            <button onClick={() => goToCategory('shorts')} className="nav-item">Shorts</button>
+            <button onClick={() => goToCategory('polos')} className="nav-item">Polos</button>
+            <button onClick={() => goToCategory('jackets')} className="nav-item">Jackets</button>
+            <button onClick={() => goToCategory('sweatshirts')} className="nav-item">Sweatshirts</button>
+
           </div>
         </div>
       </div>
