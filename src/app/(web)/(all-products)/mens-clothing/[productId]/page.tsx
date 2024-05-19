@@ -28,7 +28,7 @@ const SingleProduct = async({params} : TProductId) => {
           <p><span className="font-semibold">Category:</span> <span className="capitalize">{product?.category}</span></p>
           <p><span className="font-semibold">Rating:</span> <span className="capitalize">{product?.rating} Star</span></p>
           <p><span className="font-semibold">Price:</span> <span className="number-font">{product?.currentPrice} BDT</span></p>
-          <p><span className="font-semibold">Product Detail:</span> <span>{product?.description}</span></p>
+          <p><span className="font-semibold">Product Detail:</span> <span>{product?.description ? product?.description : 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum, quisquam! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum, quisquam! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum, quisquam! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum, quisquam!'}</span></p>
         </div>
       </div>
     </div>
