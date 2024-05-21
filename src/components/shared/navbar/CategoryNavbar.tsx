@@ -40,7 +40,7 @@ const CategoryNavbar = ({expand, toggleMenu} : TNavbarProps) => {
             <button onClick={() => goToCategory('polos')} className="nav-item">Polos</button>
             <button onClick={() => goToCategory('jackets')} className="nav-item">Jackets</button>
             <button onClick={() => goToCategory('sweatshirts')} className="nav-item">Sweatshirts</button>
-
+            <button onClick={() => goToCategory('jeans')} className="nav-item">Jeans</button>
           </div>
         </div>
       </div>

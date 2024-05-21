@@ -9,7 +9,7 @@ const Sidebar = () => {
         <Link href="/" className="mb-10 mx-auto">
           <Image src={assets.global.logo} alt="logo" className="h-16" />
         </Link>
-        <Link href="/dashboard">
+        {/* <Link href="/dashboard">
           <div className="flex items-end gap-2 p-1">
             <Image
               src={assets.dashboard.dashboardIcon}
@@ -20,8 +20,8 @@ const Sidebar = () => {
               Dashboard
             </p>
           </div>
-        </Link>
-        <Link href="/dashboard/all-products">
+        </Link> */}
+        <Link href="/dashboard">
           <div className="flex items-end gap-2 p-1">
             <Image
               src={assets.dashboard.recentEvent}
@@ -33,7 +33,7 @@ const Sidebar = () => {
             </p>
           </div>
         </Link>
-        <Link href="/dashboard/create-product">
+        {/* <Link href="/dashboard/create-product">
           <div className="flex items-end gap-2 p-1">
             <Image
               src={assets.dashboard.eventIcon}
@@ -56,7 +56,7 @@ const Sidebar = () => {
               Create Testimonial
             </p>
           </div>
-        </Link>
+        </Link> */}
       </nav>
     </div>
   );

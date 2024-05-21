@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import Link from "next/link";
 
 const HeroSection = () => {
   return (
@@ -36,50 +37,50 @@ const HeroSection = () => {
           >
             <SwiperSlide>                
               <div className="header-carousel-card">
-                <div >
-                  <Image src={assets.home.trendingNow} alt="Trending" />
+                <Link href="/trending-now">
+                  <Image src={assets.home.trendingNow} alt="Trending now" />
                   <p className="promotion-slider-title">Trending Now</p>
-                </div>
+                </Link>
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="header-carousel-card">
-                <div >
-                    <Image src={assets.home.exclusive} alt="Trending" />
-                    <p className="promotion-slider-title">Luxeline Exclusive</p>
-                  </div>
-                </div>
+                <Link href="/luxeline-exclusive">
+                  <Image src={assets.home.exclusive} alt="luxeline-exclusive" />
+                  <p className="promotion-slider-title">Luxeline Exclusive</p>
+                </Link>
+              </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="header-carousel-card">
-                <div >
-                  <Image src={assets.home.winterFashion} alt="Trending" />
+                <Link href='/winter-sale'>
+                  <Image src={assets.home.winterFashion} alt="Winter Sale" />
                   <p className="promotion-slider-title">Winter Sale</p>
-                </div>
+                </Link>
               </div>
             </SwiperSlide>
             <SwiperSlide>                
               <div className="header-carousel-card">
-                <div >
-                  <Image src={assets.home.trendingNow} alt="Trending" />
+                <Link href="/trending-now">
+                  <Image src={assets.home.trendingNow} alt="Trending now" />
                   <p className="promotion-slider-title">Trending Now</p>
-                </div>
+                </Link>
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="header-carousel-card">
-                <div >
-                    <Image src={assets.home.exclusive} alt="Trending" />
-                    <p className="promotion-slider-title">Luxeline Exclusive</p>
-                  </div>
-                </div>
+                <Link href="/luxeline-exclusive">
+                  <Image src={assets.home.exclusive} alt="luxeline-exclusive" />
+                  <p className="promotion-slider-title">Luxeline Exclusive</p>
+                </Link>
+              </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="header-carousel-card">
-                <div >
-                  <Image src={assets.home.winterFashion} alt="Trending" />
+                <Link href='/winter-sale'>
+                  <Image src={assets.home.winterFashion} alt="Winter Sale" />
                   <p className="promotion-slider-title">Winter Sale</p>
-                </div>
+                </Link>
               </div>
             </SwiperSlide>
           </Swiper>

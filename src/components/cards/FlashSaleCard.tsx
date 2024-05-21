@@ -5,7 +5,7 @@ import {TProduct} from "@/types";
 const FlashSaleCard = ({product} : {product: TProduct}) => {
 
   return (
-    <div className="flash-sale-card flex flex-col justify-between relative">
+    <Link href={`/mens-clothing/${product._id}`} className="flash-sale-card flex flex-col justify-between relative">
       <div className="w-full relative h-[380px] bg-brandLighter">
         <Image src={product.images[0]} fill alt="Flash Sale" className="mx-auto object-cover" />
       </div>
@@ -22,7 +22,7 @@ const FlashSaleCard = ({product} : {product: TProduct}) => {
           </p>
       </div>
       <Link href="/view" className="text-center border border-gray-400 mt-4 text-sm font-semibold py-1">Quick View</Link>
-    </div>
+    </Link>
   );
 };
 

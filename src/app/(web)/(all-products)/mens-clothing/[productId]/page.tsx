@@ -23,13 +23,16 @@ const SingleProduct = async({params} : TProductId) => {
         <div className="">
           <Gallery images={product.images} />
         </div>
-        <div className="space-y-1">
-          <p className="text-2xl font-bold text-brandLight">{product?.title}</p>
-          <p><span className="font-semibold">Category:</span> <span className="capitalize">{product?.category}</span></p>
-          <p><span className="font-semibold">Rating:</span> <span className="capitalize">{product?.rating} Star</span></p>
-          <p><span className="font-semibold">Price:</span> <span className="number-font">{product?.currentPrice} BDT</span></p>
-          <p><span className="font-semibold">Product Detail:</span> <span>{product?.description ? product?.description : 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum, quisquam! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum, quisquam! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum, quisquam! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum, quisquam!'}</span></p>
-        </div>
+
+          <div>
+            <p className="text-2xl font-bold text-brandLight mb-2">{product?.title}</p>
+            <div className="space-y-3">
+            <p><span className="font-semibold">Category:</span> <span className="capitalize">{product?.category}</span></p>
+            <p><span className="font-semibold">Rating:</span> <span className="capitalize">{product?.rating} Star</span></p>
+            <p><span className="font-semibold">Price:</span> <span className="number-font">{product?.currentPrice} BDT</span></p>
+            <p><span className="font-semibold">Product Detail:</span> <span>{product?.description ? product?.description : 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum, quisquam! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum, quisquam! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum, quisquam! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum, quisquam!'}</span></p>
+                    </div>
+          </div>
       </div>
     </div>
   );
