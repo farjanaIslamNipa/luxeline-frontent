@@ -1,13 +1,23 @@
+'use client'
+import useCategoryNavigation from "@/hooks/useCategoryNavigation";
 import {Checkbox} from "../ui/checkbox";
+import {useRouter} from "next/navigation";
 
 const FilteringSidebar = () => {
+  const {goToCategory} = useCategoryNavigation()
+
+  const router = useRouter();
+
+  const filterRating = (rating: number) => {
+    router.push(`/mens-clothing?rating=${rating}`);
+  };
   return (
     <div className="space-y-5">
       <div className="bg-white p-4 rounded-lg">
         <p className="text-lg font-semibold">Price Range <span className="text-sm">(BDT)</span></p>
         <div className="space-y-3">
           <div className="mt-3 flex items-center gap-3">
-            <Checkbox />
+          <button onClick={() => goToCategory('shirts')} className="h-4 w-4 border rounded-md"></button>
             <p className="number-font">500 - 1000</p>
           </div>
           <div className="mt-3 flex items-center gap-3">
@@ -33,11 +43,11 @@ const FilteringSidebar = () => {
         <div className="space-y-3">
           <div className="mt-3 flex items-center gap-3">
             <Checkbox />
-            <p className="font-medium text-sm">All</p>
+            <p className="font-medium text-sm">Shirts</p>
           </div>
           <div className="mt-3 flex items-center gap-3">
             <Checkbox />
-            <p className="font-medium text-sm">Jeans</p>
+            <p className="font-medium text-sm">Pants</p>
           </div>
           <div className="mt-3 flex items-center gap-3">
             <Checkbox />
@@ -53,7 +63,7 @@ const FilteringSidebar = () => {
         <p className="text-lg font-semibold">Rating</p>
         <div className="space-y-3">
           <div className="mt-3 flex items-center gap-3">
-            <Checkbox />
+          <button onClick={() => filterRating(5)} className="h-4 w-4 border rounded-md"></button>
             <p className="font-medium text-sm"><span className="number-font">5</span> Star</p>
           </div>
           <div className="mt-3 flex items-center gap-3">

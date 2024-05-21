@@ -3,6 +3,7 @@ import {cn} from "@/lib/utils";
 import Image from "next/image";
 import assets from '@/assets/index'
 import useCategoryNavigation from "@/hooks/useCategoryNavigation";
+import Link from "next/link";
 
 
 type TNavbarProps = {
@@ -32,6 +33,7 @@ const CategoryNavbar = ({expand, toggleMenu} : TNavbarProps) => {
             <Image src={assets.global.logo} alt="Logo" className="h-9 w-auto" />
           </div>
           <div className="flex flex-col md:flex-row items-start md:items-center gap-5 md:gap-3 lg:gap-6 h-10">
+            <Link href='/mens-clothing' className="nav-item">All</Link>
             <button onClick={() => goToCategory('shirts')} className="nav-item">Shirts</button>
             <button onClick={() => goToCategory('pants')} className="nav-item">Pants</button>
             <button onClick={() => goToCategory('t-shirts')} className="nav-item">T-Shirts</button>

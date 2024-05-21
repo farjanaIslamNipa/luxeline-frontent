@@ -4,7 +4,16 @@ import {TProduct} from "@/types";
 
 const MensClothing = async({searchParams} : {searchParams: Record<string, unknown>}) => {
   const category = searchParams.category;
-  const res = await fetch(`http://localhost:5000/api/v1/products?category=${category}`, {
+
+  let url;
+
+  if(category){
+    url = `http://localhost:5000/api/v1/products?category=${category}`
+  }else {
+    url = 'http://localhost:5000/api/v1/products'
+  }
+
+  const res = await fetch(url, {
     next: {
       revalidate: 30
     }
