@@ -17,6 +17,7 @@ const ProductCard = ({product} : {product: TProduct}) => {
           <span className="text-sm">&nbsp;BDT</span>
           <span className="ml-3 font-medium line-through text-gray-500 number-font text-sm">2990 BDT</span>
           </p>
+          <p className="font-medium mb-1 text-brand text-sm">Rating: <span className="number-font font-semibold">{product.rating}</span></p>
       </div>
     </Link>
   );
