@@ -4,21 +4,36 @@ import {Checkbox} from "../ui/checkbox";
 import ProductCard from "../cards/ProductCard";
 import {useEffect, useState} from "react";
 import RatingCheckbox from "../ui/RatingCheckbox";
+import CategoryCheckbox from "../ui/CategoryCheckbox";
 
 const AllProducts = ({productData} : {productData: TProduct[]}) => {
   const [products, setProducts] = useState<TProduct[] | null>()
   const [filterPrice, setFilterPrice] = useState<string | null>()
-  const [filterCategory, setFilterCategory] = useState<string | null>()
+  const [category, setCategory] = useState<string | null>()
   const [rating, setRating] = useState<number | null>()
-  const [filterRating, setFilterRating] = useState<boolean>(false)
 
+
+  // Filtering products according ratings
   const handleFilterRating = (ratingValue: number) => {
-    setFilterRating(prev => !prev)
     if(ratingValue === rating){
       setRating(null)
     }else{
       setRating(ratingValue)
-      
+    }
+    if(category){
+      setCategory(null)
+    }
+  }
+
+  // Filtering products according category
+  const handleFilterCategory = (categoryValue: string) => {
+    if(categoryValue === category){
+      setCategory(null)
+    }else{
+      setCategory(categoryValue)
+    }
+    if(rating){
+      setRating(null)
     }
   }
 
@@ -28,12 +43,32 @@ const AllProducts = ({productData} : {productData: TProduct[]}) => {
 
   useEffect(() => {
     if(rating){
+   
       const ratingFilteredProducts = productData?.filter(product => product?.rating === rating)
       setProducts(ratingFilteredProducts)
     }else{
       setProducts(productData)
     }
   }, [productData, rating])
+
+  useEffect(() => {
+    if(category){
+
+      const categoryFilteredProducts = productData?.filter(product => product?.category === category)
+      setProducts(categoryFilteredProducts)
+    }else{
+      setProducts(productData)
+    }
+  }, [productData, category])
+
+  // useEffect(() => {
+  //   if(rating){
+  //     setCategory(null)
+  //   }
+  //   if(category){
+  //     setRating(null)
+  //   }
+  // }, [rating, category])
 
 
 
@@ -68,22 +103,17 @@ const AllProducts = ({productData} : {productData: TProduct[]}) => {
       <div className="bg-white p-4 rounded-lg">
         <p className="text-lg font-semibold">Category</p>
         <div className="space-y-3">
-          <div className="mt-3 flex items-center gap-3">
-            <Checkbox />
-            <p className="font-medium text-sm">Shirts</p>
-          </div>
-          <div className="mt-3 flex items-center gap-3">
-            <Checkbox />
-            <p className="font-medium text-sm">Pants</p>
-          </div>
-          <div className="mt-3 flex items-center gap-3">
-            <Checkbox />
-            <p className="font-medium text-sm">Shirts</p>
-          </div>
-          <div className="mt-3 flex items-center gap-3">
-            <Checkbox />
-            <p className="font-medium text-sm">Hoodies</p>
-          </div>
+          <CategoryCheckbox category={category} categoryValue="" handleFilterCategory={handleFilterCategory} />
+          <CategoryCheckbox category={category} categoryValue="shirts" handleFilterCategory={handleFilterCategory} />
+          <CategoryCheckbox category={category} categoryValue="pants" handleFilterCategory={handleFilterCategory} />
+          <CategoryCheckbox category={category} categoryValue="t-shirts" handleFilterCategory={handleFilterCategory} />
+          <CategoryCheckbox category={category} categoryValue="hoodies" handleFilterCategory={handleFilterCategory} />
+          <CategoryCheckbox category={category} categoryValue="shorts" handleFilterCategory={handleFilterCategory} />
+          <CategoryCheckbox category={category} categoryValue="polos" handleFilterCategory={handleFilterCategory} />
+          <CategoryCheckbox category={category} categoryValue="jackets" handleFilterCategory={handleFilterCategory} />
+          <CategoryCheckbox category={category} categoryValue="sweatshirts" handleFilterCategory={handleFilterCategory} />
+          <CategoryCheckbox category={category} categoryValue="jeans" handleFilterCategory={handleFilterCategory} />
+
         </div>
       </div>
       <div className="bg-white p-4 rounded-lg">

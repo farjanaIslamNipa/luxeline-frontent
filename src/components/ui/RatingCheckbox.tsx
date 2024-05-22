@@ -15,7 +15,7 @@ const RatingCheckbox = ({
         onClick={() => handleFilterRating(ratingCount)}
         className={`${
           rating === ratingCount ? "bg-brand" : "bg-white"
-        } border rounded-sm h-5 w-5 flex justify-center items-center `}
+        } border border-gray-300 rounded-sm h-5 w-5 flex justify-center items-center `}
       >
         {rating === ratingCount ? (
           <div className="border h-2 w-2 bg-brandLighter"></div>
