@@ -5,10 +5,11 @@ import ProductCard from "../cards/ProductCard";
 import {useEffect, useState} from "react";
 import RatingCheckbox from "../ui/RatingCheckbox";
 import CategoryCheckbox from "../ui/CategoryCheckbox";
+import PriceRangeCheckbox from "../ui/PriceRangeCheckbox";
 
 const AllProducts = ({productData} : {productData: TProduct[]}) => {
   const [products, setProducts] = useState<TProduct[] | null>()
-  const [filterPrice, setFilterPrice] = useState<string | null>()
+  const [price, setPrice] = useState<string | null>()
   const [category, setCategory] = useState<string | null>()
   const [rating, setRating] = useState<number | null>()
 
@@ -23,6 +24,9 @@ const AllProducts = ({productData} : {productData: TProduct[]}) => {
     if(category){
       setCategory(null)
     }
+    if(price){
+      setPrice(null)
+    }
   }
 
   // Filtering products according category
@@ -34,6 +38,24 @@ const AllProducts = ({productData} : {productData: TProduct[]}) => {
     }
     if(rating){
       setRating(null)
+    }
+    if(price){
+      setPrice(null)
+    }
+  }
+
+  // Filtering products according price range
+  const handleFilterPrice = (priceRange: string) => {
+    if(priceRange === price){
+      setPrice(null)
+    }else{
+      setPrice(priceRange)
+    }
+    if(rating){
+      setRating(null)
+    }
+    if(category){
+      setCategory(null)
     }
   }
 
@@ -53,7 +75,6 @@ const AllProducts = ({productData} : {productData: TProduct[]}) => {
 
   useEffect(() => {
     if(category){
-
       const categoryFilteredProducts = productData?.filter(product => product?.category === category)
       setProducts(categoryFilteredProducts)
     }else{
@@ -61,14 +82,17 @@ const AllProducts = ({productData} : {productData: TProduct[]}) => {
     }
   }, [productData, category])
 
-  // useEffect(() => {
-  //   if(rating){
-  //     setCategory(null)
-  //   }
-  //   if(category){
-  //     setRating(null)
-  //   }
-  // }, [rating, category])
+
+  useEffect(() => {
+    if(price){
+      const [minPrice, maxPrice] = price.split('-').map(Number);
+      const priceFilteredProducts = productData?.filter(product => product?.currentPrice >= minPrice && product.currentPrice <= maxPrice)
+      setProducts(priceFilteredProducts)
+    }else{
+      setProducts(productData)
+    }
+  }, [productData, price])
+
 
 
 
@@ -76,30 +100,6 @@ const AllProducts = ({productData} : {productData: TProduct[]}) => {
     <div className="flex">
     <div className="bg-gray-100 min-w-[300px] p-5">
     <div className="space-y-5">
-      <div className="bg-white p-4 rounded-lg">
-        <p className="text-lg font-semibold">Price Range <span className="text-sm">(BDT)</span></p>
-        <div className="space-y-3">
-          <div className="mt-3 flex items-center gap-3">
-            <p className="number-font">500 - 1000</p>
-          </div>
-          <div className="mt-3 flex items-center gap-3">
-            <Checkbox />
-            <p className="number-font">1001 - 2000</p>
-          </div>
-          <div className="mt-3 flex items-center gap-3">
-            <Checkbox />
-            <p className="number-font">2001 - 3000</p>
-          </div>
-          <div className="mt-3 flex items-center gap-3">
-            <Checkbox />
-            <p className="number-font">500 - 1000</p>
-          </div>
-          <div className="mt-3 flex items-center gap-3">
-            <Checkbox />
-            <p className="number-font">500 - 1000</p>
-          </div>
-        </div>
-      </div>
       <div className="bg-white p-4 rounded-lg">
         <p className="text-lg font-semibold">Category</p>
         <div className="space-y-3">
@@ -124,6 +124,16 @@ const AllProducts = ({productData} : {productData: TProduct[]}) => {
           <RatingCheckbox rating={rating} ratingCount={3} handleFilterRating={handleFilterRating} />
           <RatingCheckbox rating={rating} ratingCount={2} handleFilterRating={handleFilterRating} />
           <RatingCheckbox rating={rating} ratingCount={1} handleFilterRating={handleFilterRating} />
+        </div>
+      </div>
+      <div className="bg-white p-4 rounded-lg">
+        <p className="text-lg font-semibold">Price Range <span className="text-sm">(BDT)</span></p>
+        <div className="space-y-3">
+          <PriceRangeCheckbox price={price} priceRange={'1000-2000'} handleFilterPrice={handleFilterPrice} />
+          <PriceRangeCheckbox price={price} priceRange={'2000-3000'} handleFilterPrice={handleFilterPrice} />
+          <PriceRangeCheckbox price={price} priceRange={'3000-4000'} handleFilterPrice={handleFilterPrice} />
+          <PriceRangeCheckbox price={price} priceRange={'4000-5000'} handleFilterPrice={handleFilterPrice} />
+          <PriceRangeCheckbox price={price} priceRange={'5000-6000'} handleFilterPrice={handleFilterPrice} />
         </div>
       </div>
     </div>
